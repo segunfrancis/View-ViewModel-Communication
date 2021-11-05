@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/add_card"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="24dp"
+        app:cardBackgroundColor="#DDDDDD"
+        app:cardCornerRadius="25dp"
+        app:contentPadding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/number_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <ImageView
+            android:id="@+id/add_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_add"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/number_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+        app:layout_constraintBottom_toTopOf="@id/subtract_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_card"
+        tools:text="0" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/subtract_card"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="24dp"
+        app:cardBackgroundColor="#DDDDDD"
+        app:cardCornerRadius="25dp"
+        app:contentPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_text">
+
+        <ImageView
+            android:id="@+id/subtract_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_subtract"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
