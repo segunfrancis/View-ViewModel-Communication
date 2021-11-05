@@ -34,13 +34,19 @@ class MainActivity : AppCompatActivity() {
     private fun setupObservers() {
         viewModel.countState.observe(this) { state ->
             when (state) {
-                is CountState.Success -> binding.numberText.text = state.count.toString()
-                is CountState.Warning -> {
-                    Toast.makeText(this, state.message, Toast.LENGTH_SHORT)
-                        .show()
-                    binding.numberText.text = state.count.toString()
-                }
+                is CountState.Success -> handleSuccess(state.count)
+                is CountState.Warning -> handleWarning(message = state.message, count = state.count)
             }
         }
+    }
+
+    private fun handleSuccess(count: Int) = with(binding) {
+        numberText.text = count.toString()
+    }
+
+    private fun handleWarning(message: String, count: Int) = with(binding) {
+        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT)
+            .show()
+        numberText.text = count.toString()
     }
 }

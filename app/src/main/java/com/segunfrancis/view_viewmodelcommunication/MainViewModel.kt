@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
-    private var count: Int = 0
+    private var count: Int = 0 // Represents the source of data
 
     private var _countState = MutableLiveData<CountState<Int>>(CountState.Success(count))
     val countState: LiveData<CountState<Int>> = _countState
