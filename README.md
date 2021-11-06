@@ -5,6 +5,8 @@ In MVVM architecture, this sample project describes how the `View` layer shouldn
 
 This approach shows how the `ViewModel` carries the responsibility of handling the state of the views. The views send actions to the viewModel which in turn alter the state of the views. The state also include a `Warning` state that is triggered when the minimum or maximum numbers are reached.
 
+Another advantage of this approach is that the state of the views are maintained during configuration change, this prevents the step of retaining state using things like `savedInstanceState`.
+
 ### Screenshots
 <p align="middle">
  <img src="https://github.com/segunfrancis/View-ViewModel-Communication/blob/master/screenshot/Screenshot_20211106_001356.png" alt="screenshot 1" width="33%">
